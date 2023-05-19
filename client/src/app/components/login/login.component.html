@@ -9,6 +9,8 @@
         <label for="password" class="block mb-1">Contraseña:</label>
         <input type="password" id="password" name="password" [(ngModel)]="password" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500">
       </div>
+      <div *ngIf="error" class="text-red-500 mb-4">{{ error }}</div>
+
       <div class="mb-4">
         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white rounded px-4 py-2">Iniciar sesión</button>
       </div>

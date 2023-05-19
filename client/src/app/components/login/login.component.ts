@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  error: string = ''; // Variable para controlar el aviso de contraseña incorrecta
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -27,7 +28,7 @@ export class LoginComponent {
       },
       error => {
         console.error('Error durante el inicio de sesión', error);
-        // Manejar el error adecuadamente
+        this.error = 'La contraseña es incorrecta.';
       }
     );
   }
